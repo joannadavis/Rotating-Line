@@ -7,7 +7,6 @@ public class LineComponent extends JComponent{
 	
 	
 	
-	
 
 	public static void main(String[] args) {
 		

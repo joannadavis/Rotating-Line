@@ -16,7 +16,7 @@ public class LineViewer {
 		return this.height;
 	}
 	
-	public void setHeight(int height){
+	public  void setHeight(int height){
 		this.height = height;
 	}
 	
@@ -32,7 +32,7 @@ public class LineViewer {
 
 		JFrame frame =  new JFrame();
 		frame.setSize(width, height);
-		
+	
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		frame.setTitle("Line Rotation");
