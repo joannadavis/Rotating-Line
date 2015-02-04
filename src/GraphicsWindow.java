@@ -1,6 +1,14 @@
+import java.applet.Applet;
+import java.awt.BorderLayout;
+import java.awt.Button;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+
 import javax.swing.JFrame;
 
-public class GraphicsWindow  {
+public class GraphicsWindow  extends Applet{
 	Line line;
 	int sleepTime;
 	//Given a GameOfLife, a new GameOfLife is constructed
@@ -12,6 +20,7 @@ public class GraphicsWindow  {
 	public void setSleepTime(int st){
 		this.sleepTime= st;
 	}
+	
 	//This is the method that allows the viewer to see the board and the generations
 	//The method receives the number of generations. The original generation is called generation 0.
 	//The timer is set to change to the next generation after 5 seconds
@@ -20,18 +29,13 @@ public class GraphicsWindow  {
 
 		if(isRunning){
 			final JFrame frame = new JFrame(); 
-			frame.setSize(400, 400);
-
-//			frame.setLayout(new FlowLayout());
-//		    JButton b1 = new JButton();   
-//		    b1.setPreferredSize(new Dimension(200, 40));
-//		    b1.setVisible(true);
-//		    b1.setText("Stop");
-//			frame.add(b1);
-
-
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+			frame.setSize(400, 400);
+			
+			frame.setLayout(new BorderLayout());
+			frame.add(new Button("Rotate"), BorderLayout.NORTH);
+			frame.add(new Button("Reverse"), BorderLayout.SOUTH);
+			
 			RotatingLineComponent component = new RotatingLineComponent(line);
 			frame.add(component);
 			frame.setVisible(true);
